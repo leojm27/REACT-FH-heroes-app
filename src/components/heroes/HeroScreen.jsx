@@ -8,19 +8,17 @@ export const HeroScreen = ({ history }) => {
     const { heroeId } = useParams();
     const navigate = useNavigate();
 
+    // useMemo memoriza valores, evitamos asi consultas innecesarias a la BD
+    // [heroeId] es la dependencia, si cambia se vuelve a disparar la peticion
     const hero = useMemo(() => getHeroById(heroeId), [heroeId])
 
+    // path con ID erroneo, me devuelve al home
     if (!hero) {
         return <Navigate to='/' />;
     }
 
     const handleReturn = () => {
         navigate(-1);
-        /*if (history.length <= 2) {
-            history.push('/')
-        } else {
-            history.goBack();
-        }*/
     }
 
     const {
@@ -50,7 +48,7 @@ export const HeroScreen = ({ history }) => {
                     <li className="list-group-item"><b>First Appearance: {first_appearance}</b></li>
                 </ul>
 
-                <h5>Characters</h5>
+                <h5 className='mt-3'>Characters</h5>
                 <p>{characters}</p>
                 <button
                     className="btn btn-outline-info"
