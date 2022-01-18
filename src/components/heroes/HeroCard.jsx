@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { heroesImages } from '../../helpers/heroImages';
+
 
 export const HeroCard = ({
     id,
@@ -10,7 +12,8 @@ export const HeroCard = ({
     characters
 }) => {
 
-    const imagePath = `/assets/${id}.jpg`;
+    //const imagePath = `/assets/${id}.jpg`;
+    const imagePath = heroesImages(`./${id}.jpg`).default
 
     return (
 
