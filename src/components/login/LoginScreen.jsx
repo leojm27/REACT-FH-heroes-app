@@ -21,8 +21,10 @@ export const LoginScreen = () => {
 
         dispatch(action);
 
+        const lastPath = localStorage.getItem('lastPath') || '/marvel';
+
         //history.replace('/');
-        navigate('/marvel', {
+        navigate(lastPath, {
             replace: true // reemplazar la entrada del 'history'
         });
 
