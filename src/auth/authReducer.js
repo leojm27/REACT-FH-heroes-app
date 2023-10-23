@@ -2,7 +2,7 @@ import { types } from "../types/types";
 
 /*
     const initialState = {
-        name: 'Leonardo',
+        name: 'name',
         logged: true
     }
 */
