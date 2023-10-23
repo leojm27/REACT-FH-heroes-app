@@ -15,7 +15,7 @@ export const LoginScreen = () => {
         const action = {
             type: types.login,
             payload: {
-                name: 'Joaquin'
+                name: 'Fausto'
             }
         }
 
